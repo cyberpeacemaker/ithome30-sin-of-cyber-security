@@ -12,6 +12,9 @@ EX: Metaspolit框架，弱點掃描，弱點利用
 
 然而
 
+## 
+竊取企業智慧財產權
+
 ## 勒索科技業
 
 Dell傳出遭駭客組織World Leaks勒索，該公司坦承測試平臺遭駭[^1]
@@ -34,6 +37,11 @@ Dell傳出遭駭客組織World Leaks勒索，該公司坦承測試平臺遭駭[^
 微軟打算限縮部分中國MAPP成員存取內容，原因是中國政府傳出參與SharePoint零時差漏洞攻擊[^7]
 
 ## 
+Stuxnet 破壞伊朗生產核原料的離心機
+
+
+##
+美國國家安全局(NSA)與英國政府通訊總部(GCHQ)遭窺探
 
 [^1]: https://www.ithome.com.tw/news/170190
 [^2]: https://www.ithome.com.tw/news/169742
