@@ -1,1 +1,5 @@
-- ch.1 cia+4
+- ch.1 
+    - cia+4
+- ch.1-1 
+    - 駭客以可以駭入這些智慧裝置並竊聽[link](https://www.cnet.com/tech/mobile/these-kids-smartwatches-have-security-problems-as-simple-as-1-2-3/)
+    - 駭客入侵Ring監視器，嚇壞家中小孩 [link](https://www.ithome.com.tw/news/134826)
