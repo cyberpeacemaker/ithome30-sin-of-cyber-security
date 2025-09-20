@@ -65,6 +65,7 @@ Dell傳出遭駭客組織World Leaks勒索，該公司坦承測試平臺遭駭[^
 
 ## 網路諜報
 
+俄羅斯、中國駭客組成網路犯罪集團ShadowSilk，利用滲透測試工具和已知漏洞，入侵中亞、亞太地區政府機關[^8]
 
 瑞士政府周一指出，受非營利機構Radix受勒索軟體攻擊事件波及，致使數個瑞士政府機構辦公室資料外洩[^4]。
 加拿大眾議院遭網路攻擊[^5] 
@@ -100,6 +101,7 @@ SolarWinds 專門製作企業用的網路監控轉體 無角大廈 網路司令�
 危機解密顯示 量子突破 Yahho! LinkedIN facebook twitter youtube等其他熱門網站
 
 量子還被用來害入電信公司BELACOM 石油輸出國家組織OPEC 英國政府通訊總部GCHQ
+資安業者S2 Grupo揭露俄羅斯駭客APT28鎖定北約組織（NATO）成員國企業組織的最新一波攻擊行動，駭客打造新的後門程式NotDoor，部署在受害電腦的收信軟體Outlook，以便接收命令、洩露資料，以及上傳作案工具[^9]
 
 ## 經濟間諜
 中國持續從美國企業翹取智慧財產 F-35戰鬥機整設計圖 google, facebook
@@ -112,3 +114,5 @@ SolarWinds 專門製作企業用的網路監控轉體 無角大廈 網路司令�
 [^5]: https://www.ithome.com.tw/news/170637
 [^6]: https://www.ithome.com.tw/news/170651
 [^7]: https://www.ithome.com.tw/news/170747
+[^8]: https://www.ithome.com.tw/news/170955
+[^9]: https://www.ithome.com.tw/news/171020

@@ -1,7 +1,16 @@
+- 攻擊力用工具手段: https://www.ithome.com.tw/news/170955
+- HexStrike-AI, Claude Code
 - ch.1 
     - cia+4
 - ch.1-1 
     - 駭客以可以駭入這些智慧裝置並竊聽[link](https://www.cnet.com/tech/mobile/these-kids-smartwatches-have-security-problems-as-simple-as-1-2-3/)
     - 駭客入侵Ring監視器，嚇壞家中小孩 [link](https://www.ithome.com.tw/news/134826)
+    - Insecam 
 - ch.1-2
     - 2018 北韓 lazarus group攻擊紐約聯邦儲備銀行 偷取8100萬美元
+- ch.1-3
+    - 新聞優化 提取重點內容
+    - 解釋基礎建設被害會怎樣 標記案例抽取3個月內
+    - 戰爭梳理重點 強調能做到什麼 為什麼資安即國安
+    - 點出台灣可以借鏡的地方
+    - 網路犯罪集團不但擴大惡意軟體的影響範圍，也同步發展不同型態的威脅手法。例如烏俄戰爭出現一種名為「資料破壞」（Wiper）的攻擊手法，導致國家級駭客組織持續針對高科技製造業、公共部門、電信業等重要的基礎設施進行攻擊
