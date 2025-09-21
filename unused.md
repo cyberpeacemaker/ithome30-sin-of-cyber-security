@@ -12,7 +12,6 @@ ch2.0{
     stunxNet例子
     相信資安商品
 
-
     ### 以為警察會處理
     光處理事情就更多了 還資安
     也沒那個資源
@@ -30,6 +29,14 @@ ch2.0{
 ch2-1{
     Clark School study is one of the first to quantify the near-constant rate of hacker attacks of computers with Internet access—every 39 seconds on average [^7]
     [^7]: https://eng.umd.edu/news/story/study-hackers-attack-every-39-seconds?utm_source=chatgpt.com
+    若人們對這些風險缺乏認知，將會在毫無防備的情況下，不斷將脆弱的裝置連接到網路，會讓駭客擁有很大的攻擊面積，進而讓整個社會暴露在極高的資安風險之中。
+
+    這些風險對不同角色造成的影響也不盡相同：
+
+    * **對一般民眾而言**，物聯網裝置與人臉辨識等技術的大量結合，使得日常生活中的監控風險大幅上升。
+    * **對軟體、硬體及網路等供應商而言**，若提供的產品存在安全漏洞，不僅自身受害，更可能連帶危及整個供應鏈。
+    * **對於保管敏感資訊的單位**——如銀行、政府、軍方等，一旦遭到入侵，可能導致大量機密資料外洩。
+
 }
 
 
