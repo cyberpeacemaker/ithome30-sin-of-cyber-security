@@ -1,25 +1,36 @@
 # 【08】資安的原罪 ch.2-2 從「腳本小子」到國家級 APT
-可以看到 再強資安都會被攻破
 
-# 從腳本小子到進階持續威脅
 
-## 什麼是腳本小子?
+# From scriptkid to advace persist threat
 
-腳本小子在駭客圈是一個貶義詞，只
+now wer know the deviece that can be hackerd. but who is hacking?
+
+## who is hacking?
+
+**Script Kiddo (or Script Kiddie)**
+A script kiddo is an inexperienced or unskilled person who uses existing computer scripts or tools created by others to hack or exploit systems, without truly understanding how they work. They're often looked down upon in the cybersecurity world.
 由於市面上大量的現成工具，目前想成為駭客不需要技術或經驗，只需要犯法的勇氣就可以了。
 EX: Metaspolit框架，弱點掃描，弱點利用
 
-##  APT
-超出個人 國與國的戰場
+**💰 Profit-Oriented Hacker Groups:**
+現在許多民間營利項的駭客組織規模及能力發展壯大
+These are cybercriminal organizations that focus on **making money** rather than political or ideological goals. They often run like businesses, with teams, customer support, and even affiliate programs.
 
-這個詞通常是專指國家，但現在許多民間營利項的駭客組織規模及能力也毫不遜色
+**APT (Advanced Persistent Threat):**
+An APT is a sophisticated and stealthy cyber attack, usually carried out by skilled hackers (often state-sponsored) over a long period. The goal is to gain unauthorized access to a network and remain undetected to steal data or cause damage.
+要技術有技術，有方法有方法，最恐怖的是有充足的資源。一般民眾組織不可投入全部資源在資安
 零時差弱點的開發 網路釣魚大規模法展與運行 基礎建設製造 滲透出來資料的後續處理 都需資源透入
-要技術有技術 有方法有方法 要資源要資源
 駭客工具會很勤勞而且周詳的更新
 他們創作工具的意圖是要避免遭到偵測 即在被偵測到時緩減被確認出身分的速度
 
 合理的假設是APT已經喘入 任務是在組織內部找他們並嘗試排除他們
 被逼上，修補程式的安裝、防毒軟體與入侵偵測系統的使用、甚至是空氣隔離的導入，都很難期待產生出什麼成效
+
+---
+
+
+
+
 
 美國國安局從2012 弱點買家 向法國公司VUPEN訂閱"零時差服務"
 2016 聯邦調查局已超過130萬美元 購買iphne零時差弱點利用程式
@@ -27,9 +38,11 @@ EX: Metaspolit框架，弱點掃描，弱點利用
 微軟打算限縮部分中國MAPP成員存取內容，原因是中國政府傳出參與SharePoint零時差漏洞攻擊[^7]
 
 
+
 由於進階持續性威脅（APT）的入侵手法與國家級駭客發動的惡意行為，相較網路犯罪分子的威脅，其攻擊速度更快、更具針對性，且影響範圍更廣，因此不論是對台灣或全球各大企業，APT攻擊與國家級駭客組織的規模發展與活躍程度，都將成為未來攻擊趨勢的重點關注方向。
 
 針對各種重要機構設施滲透，其中包含電信業者，這將使的下游客戶被攻擊
+
 ## 國家例子
 
 法國企業組織遭中國駭客UNC5174鎖定，透過Ivanti CSA設備零時差漏洞入侵[^11]
