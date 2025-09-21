@@ -2,6 +2,7 @@
 - HexStrike-AI, Claude Code
 -這些駭客為了突破不同的網段並試圖存取隔離網路環境，採取複雜且隱密的手法，組成多階段攻擊鏈。他們運用虛擬化平臺及網路基礎設施作為初始存取、橫向移動、持續活動的管道。而且，攻擊者的手段相當靈活，因為他們積極抹除作案痕跡、更換使用的工具、部署能長期存取的後門，並操縱網路組態，而能不斷重新建立存取權限。(https://www.ithome.com.tw/news/170299)
 - 特別的是，雖然駭客同時打造Windows和Linux版本的ShortLeash，但他們似乎偏好針對Linux作業系統的裝置下手。駭客先使用Bash指令碼取得本機root權限，並檢查作業系統類型（Ubuntu、CentOS，或其他作業系統），備份特定惡意服務組態檔案、以系統處理程序轉譯現有的服務，使其在背景執行，並在受害裝置重開機後也會重新載入。
+- Configuration vulnerabilities (e.g., default passwords, open ports)
 ---
 
 - ch.1 
