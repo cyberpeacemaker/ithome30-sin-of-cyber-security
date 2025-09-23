@@ -1,3 +1,8 @@
+* **1960s–70s**: Foundation protocols (NCP, then TCP/IP)
+* **1980s**: Standardization of FTP, Telnet, DNS, SMTP, POP
+* **1990s**: Explosion of web-based protocols (HTTP, SSL, IMAP, DHCP)
+* **2000s–2020s**: Security (HTTPS, SFTP, SSH) 
+
 Yes, you’re absolutely right! Communication protocols operate at different layers of the OSI (Open Systems Interconnection) model, and that’s where the confusion might come from. The OSI model has **7 layers**, and each layer has its own role in the data communication process. Here's a quick breakdown to clarify:
 
 ### **OSI Model Layers**
