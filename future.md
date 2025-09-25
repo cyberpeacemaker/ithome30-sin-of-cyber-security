@@ -4,6 +4,7 @@
 - 特別的是，雖然駭客同時打造Windows和Linux版本的ShortLeash，但他們似乎偏好針對Linux作業系統的裝置下手。駭客先使用Bash指令碼取得本機root權限，並檢查作業系統類型（Ubuntu、CentOS，或其他作業系統），備份特定惡意服務組態檔案、以系統處理程序轉譯現有的服務，使其在背景執行，並在受害裝置重開機後也會重新載入。
 - Configuration vulnerabilities (e.g., default passwords, open ports)
 - side-channel attacks, speculative execution, or even air-gapped system breaches
+- DNSSEC
 ---
 
 - ch.1 
