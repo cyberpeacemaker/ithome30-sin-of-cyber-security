@@ -6,6 +6,7 @@
 - side-channel attacks, speculative execution, or even air-gapped system breaches
 - DNSSEC
 - Bluetooth Profiles
+ -https://gbhackers.com/state-sponsored-hackers/
 
 ---
 
