@@ -5,6 +5,8 @@
 - Configuration vulnerabilities (e.g., default passwords, open ports)
 - side-channel attacks, speculative execution, or even air-gapped system breaches
 - DNSSEC
+- Bluetooth Profiles
+
 ---
 
 - ch.1 
