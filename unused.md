@@ -73,12 +73,48 @@ ch3-1.b{
 ch3-1.c{
     bluesnarfing 藍芽竊聽
     ## 網際網路的延伸
+    **安全議題**：數據網路容易遭遇SIM卡複製、中間人攻擊及SS7漏洞，5G帶來大量物聯網裝置與網路切片的新挑戰，需嚴密防護以防資安入侵。
+    **安全議題**：衛星通訊面臨訊號干擾、資料攔截及地面站網路攻擊等威脅，衛星連結也易遭冒充或未授權存取，需加強資安防護。    
+}
+ch3-1.d{
+    烏克蘭電廠20年未更新，駭客入侵電廠的控制設備，只消幾秒鐘就能切斷電力供應
+    駭客經常竄改韌體內容在裏頭植入惡意功能，試圖長期不被發現活動蹤跡，就算重裝作業系統或更換硬碟也能繼續存活。
+另外竄改某些韌體(BIOS或UEFI)的組態變數，已讓駭客停用某些硬體支援的安全控制，例如安全啟動(secure boot)
 }
 ch3-2.c{
-    **安全議題**：數據網路容易遭遇SIM卡複製、中間人攻擊及SS7漏洞，5G帶來大量物聯網裝置與網路切片的新挑戰，需嚴密防護以防資安入侵。
-    **安全議題**：衛星通訊面臨訊號干擾、資料攔截及地面站網路攻擊等威脅，衛星連結也易遭冒充或未授權存取，需加強資安防護。
+    ### **5. Impacts: What Are the Consequences?**
+
+    The consequences of MITM attacks can be severe for both individuals and organizations:
+
+    * **Data Theft**:
+
+    * Sensitive personal or financial information (e.g., usernames, passwords, credit card details) can be stolen and used for malicious purposes such as identity theft, fraud, or account takeovers.
+
+    * **Loss of Data Integrity**:
+
+    * Attackers may alter the communication in transit. For example, a bank transfer could be modified to redirect funds to the attacker’s account, or malicious code could be inserted into otherwise legitimate files.
+
+    * **Impersonation**:
+
+    * The attacker can impersonate either of the communicating parties. This can lead to unauthorized access to systems, malicious transactions, or spreading misinformation.
+
+    * **Undermining Trust**:
+
+    * MITM attacks erode trust in online communications. If users begin to suspect that their communication is being intercepted, they may avoid using certain services or sharing sensitive information, which can hurt businesses and disrupt online services.
+    
+    * **Silent traffic redirection**: Victims may unknowingly connect through the attacker’s gateway or use malicious DNS servers, enabling phishing, session hijacking, or malware injection.
+
+    * **Reputational Damage**:
+
+    * If an organization is compromised by a MITM attack, the resulting data breach or financial loss can severely damage its reputation, especially if customers' sensitive information is involved.
 }
+
 ch3-2.b{
     欠缺資安溢式的使用
     PEBCAK
+}
+ch3-2.c{
+    緩解
+    CDN contents delivery network
+    同一內容的快取分散在網路上
 }
