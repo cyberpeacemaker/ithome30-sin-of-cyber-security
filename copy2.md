@@ -1,126 +1,95 @@
-Great — session hijacking is a crucial topic to cover because, as you said, **if an attacker obtains a user's session cookie, they can impersonate that user without re-entering credentials**. Below is a compact, clear treatment you can drop into your talk: what it is, how it happens, examples, and concrete mitigations (both developer-side and user-side).
+好，幫你把內容擴寫並補上更多可操作的判別與防護建議，特別把第 1、2 點（網路釣魚、語音釣魚）寫得更詳盡、實務化，並補上 AI 新趨勢與常見變種。下方以中文條列清楚呈現，方便放進文件或投影片。
+
+# 🔐 社交工程攻擊 — 擴寫說明（重點：網路釣魚 & 語音釣魚）
 
 
 
-# 🕵️‍♂️ Common ways attackers steal session cookies
 
-* **Cross‑Site Scripting (XSS)** — malicious JavaScript reads `document.cookie` and sends it to the attacker (unless cookie is HttpOnly).
-* **Network sniffing / Man‑in‑the‑Middle (MITM)** — on unencrypted (HTTP) connections or weak TLS, cookies can be intercepted.
-* **Malware / Keyloggers / Browser extensions** — extract cookies stored on the machine.
-* **Cross‑Site Request Forgery (CSRF)** misuse — not direct theft, but can cause actions using the victim’s session.
-* **Session fixation** — attacker forces a known session ID on the victim, then uses that same ID after the victim authenticates.
-* **Physical access / browser sync** — access to device/browser where session is active.
+**如何判別（紅旗）**
 
+* 寄件人地址與顯示名稱不一致（或看起來像合法但域名不對）。
+* 有語氣急迫、威脅或要求立即採取行動。
+* 含不熟悉或奇怪的附件（.exe、.scr、.zip）或短縮連結。
+* 拼字/語法錯誤、排版怪異、非公司平常用語。
+* 要求轉帳、提供憑證碼、或要求同步使用 MFA 驗證代碼傳給寄件者。
 
+**被釣到後的應對**
 
-# ✅ Developer-side mitigations (practical & prioritized)
+* 立即切斷可疑連結（勿再點）、關閉瀏覽器分頁，並使用另一台裝置登入並變更密碼（若懷疑帳號已被盜）。
+* 報告 IT/資安單位、依公司事件回報流程處理（含保留郵件標頭、附檔）。
+* 若有財務損失或個資外洩，盡速聯絡銀行、啟動信用凍結或身份防護措施。
+* 檢查是否有可疑登入紀錄、啟用或更換 MFA、掃毒。
 
-1. **Always use TLS (HTTPS) everywhere**
+**防護建議（實務）**
 
-   * Prevents network interception.
-2. **Set cookie flags**
-
-   * `HttpOnly` — prevents JavaScript access to cookie.
-   * `Secure` — cookie only sent over HTTPS.
-   * `SameSite=Lax` (or `Strict` for tighter controls) — mitigates CSRF and some cross-site leakages.
-     Example header:
-
-   ```
-   Set-Cookie: sessionid=<id>; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=3600
-   ```
-3. **Regenerate / rotate session IDs on privilege changes and login**
-
-   * After successful login (or privilege escalation), call `regenerateSession()` so any previously-known ID is invalid.
-4. **Short session lifetimes + inactivity timeout**
-
-   * Keep lifespan small; expire sessions after inactivity.
-5. **Server-side session invalidation on logout**
-
-   * Remove session record and unlink to ID.
-6. **Token rotation for stateless tokens**
-
-   * If using refresh tokens or JWTs, implement rotation and revocation mechanisms.
-7. **Bind sessions to additional context (with caution)**
-
-   * Store and check client attributes (IP range, User-Agent, device id). If a sudden change occurs, require re-authentication or step-up (MFA). Be careful of legitimate mobile users roaming across networks — avoid brittle bindings.
-8. **Require re-authentication for sensitive actions**
-
-   * Password changes, payments, and account settings should prompt for password or MFA again.
-9. **Protect against XSS**
-
-   * Use Content Security Policy (CSP), proper output encoding, input validation — this reduces ability of attackers to read cookies via JS.
-10. **Protect against CSRF**
-
-    * Use anti-CSRF tokens or SameSite cookies.
-11. **Implement session revocation / blacklisting**
-
-    * Maintain server-side session store to revoke tokens immediately when needed.
-12. **Log and detect anomalies**
-
-    * Monitor for concurrent sessions from widely different geolocations or rapid User-Agent/IP changes; alert or force re-auth.
-13. **Use HttpOnly + ephemeral cookies for UI + API tokens for APIs**
-
-    * Keep authentication cookie use separate from API bearer tokens where appropriate.
-14. **Consider modern primitives**
-
-    * Use **short-lived cookies + refresh tokens with rotation** or move to **FIDO2 / passkeys** where applicable — these reduce reliance on cookies entirely.
-
-# 🧩 Example snippets
-
-**Express (Node.js) — secure cookie options**
-
-```js
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    httpOnly: true,
-    secure: true,        // only over HTTPS
-    sameSite: 'lax',
-    maxAge: 60*60*1000   // 1 hour
-  }
-}));
-```
-
-**Django (settings.py)**
-
-```py
-SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SECURE = True
-SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_AGE = 3600  # seconds
-```
-
-# 🧭 Detection & response tips
-
-* **Detect**: anomalous IP/User-Agent combos, multiple failed token validations, sessions used from different countries in short time.
-* **Respond**: gracefully expire the session, notify the user (email + UI), force password reset or MFA re‑auth, and revoke related tokens.
-
-# 👥 User-facing guidance (good to include in presentation)
-
-* Don’t use public Wi‑Fi without a VPN.
-* Log out after using shared/public devices.
-* Avoid installing untrusted browser extensions.
-* Enable multi-factor authentication (MFA) — reduces impact from stolen cookies for sensitive actions.
-* Review active sessions in account settings and sign out suspicious ones.
-
-# 🧾 Quick checklist you can copy into slides
-
-* Use HTTPS everywhere ✔️
-* `HttpOnly`, `Secure`, `SameSite` cookies ✔️
-* Regenerate session ID on login ✔️
-* Short session TTL, inactivity timeouts ✔️
-* Protect against XSS and CSRF ✔️
-* Re-auth for sensitive operations ✔️
-* Monitor and revoke compromised sessions ✔️
-* Encourage MFA & safe user habits ✔️
+* 啟用多因素驗證（MFA）；即使密碼被盜，多一層阻擋。
+* 郵件閘道加上釣魚過濾、附件沙箱（sandbox）掃描與域名校驗（DMARC/DKIM/SPF）。
+* 針對不同職務（高風險如財務、人資）進行針對性訓練與模擬釣魚測試。
+* 建立「二次驗證流程」：任何財務或重大變更需電話回撥至系統登錄的官方號碼確認（而非郵件內號碼）。
+* 員工教育：如何辨識釣魚、如何安全回報、不要在私人或公共電腦輸入敏感資訊。
 
 ---
 
-If you’d like, I can:
+#### ☎️ 2. **語音釣魚（Vishing） — 擴寫**
 
-* Create a simple slide (3–5 slides) that explains session hijacking + mitigation, or
-* Produce a short diagram (flow) showing an attacker stealing a cookie via XSS and using it, plus the defensive controls.
 
-Which would be most useful for your talk?
+
+**實際範例（樣板）**
+
+* 來電：「我是你們公司 IT，小林。我們剛檢測到你登入有異常，請把螢幕上的驗證碼讀給我確認。」（若用 deepfake，語音甚至模仿你熟悉的主管）
+
+**如何判別（紅旗）**
+
+* 要求立即提供一次性密碼（OTP）或多因素驗證碼。
+* 要求透過電話進行帳戶變更或財務指令，並強調“絕對機密/立即”。
+* 來電內容含模糊資訊、或對方不知道你平常的工作細節（當然，spear/vishing 可能很會做功課）。
+* 來電者壓力測試（不斷施壓、拒絕書面證明、拒絕回撥）。
+
+**被騙後的應對**
+
+* 立刻變更受影響帳號密碼，並撤銷任何因電話交付的授權（例如撤銷已分享之 OTP）。
+* 聯絡該服務的官方客服（使用公開網站上的號碼）確認是否有異常。
+* 通報 IT/資安與上級，並檢查是否有進一步的社交工程連鎖攻擊（例如同時收到釣魚郵件）。
+
+**防護建議（實務）**
+
+* 公司制定「電話驗證政策」：任何涉及財務或敏感資料的電話請求，必須依照既定回撥流程（回撥至內部電話簿/系統記錄的號碼）來確認。
+* 錄音與審核高風險通話（合規允許下），或採用語音身份驗證時結合行為分析而非單一聲紋。
+* 員工訓練：不要在電話透露 OTP、密碼、或允許遠端控制；遇到緊急要求先停下並回撥公司官方號碼確認。
+* 針對高層（如 CEO/CFO）實施額外驗證層級（例如雙人簽核、書面授權）。
+
+---
+
+#### 🕵️ 3. **假借身份（Pretexting） — 簡要擴充**
+* 攻擊者編造可信情境（例如稅務稽核、人資要求、廠商合約問題），一步步套取資料或取得實體/系統存取權。
+
+* 防護：建立資料提供原則（最小授權）、驗證請求者身份（回撥、官方信頭、事前密碼短語）。
+
+#### 🏢 4. **誘餌攻擊（Baiting） — 簡要擴充**
+
+
+* 防護：禁用自接入 USB、自動執行外來媒體、員工教育（不要插不明隨身碟）。
+
+#### 👨‍💼 5. **冒充 / 尾隨（Impersonation / Tailgating） — 簡要擴充**
+
+* ，跟著真正員工尾隨進出安全門禁，或當場套詢密碼/帳號。
+* 防護：門禁嚴格執行、訪客伴隨政策、員工拒絕尾隨文化（Politely challenge）、訪客出入登記。
+
+---
+
+# ✅ 快速檢查表（可放在投影片或海報）
+
+* 郵件/來電是否要求「立即行動」？→ 小心
+* 是否要求提供 OTP、密碼、或匯款指示？→ 絕不電話/郵件提供
+* 是否有域名或寄件人不一致、拼字錯誤？→ 檢查完整寄件人地址與連結目標
+* 任何財務變更都需要第二道驗證（回撥或書面確認）
+* 啟用 MFA、定期更換密碼、進行員工釣魚演練
+
+# ⚠️ AI 相關風險補充（簡短）
+
+* AI 能自動生成更逼真的釣魚郵件（語氣更自然、語法正確）與 deepfake 語音，使釣魚與 vishing 更難分辨。
+* 對策：提高多因素驗證依賴、實施「回撥確認」與行為/設備風險評估，並加強員工的最新攻擊趨勢教育。
+
+---
+
+如果你要我把其中一段（例如「網路釣魚」或「語音釣魚」）改成投影片內容（每張投影片 1–2 個要點、含範例與紅旗）或做成海報短文案，我可以立刻幫你把文字重整成 PPT 或海報用的簡潔版（每張投影片 5–7 行）。要哪一種格式我直接幫你生成？
