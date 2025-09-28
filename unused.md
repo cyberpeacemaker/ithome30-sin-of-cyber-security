@@ -81,6 +81,17 @@ ch3-1.d{
     駭客經常竄改韌體內容在裏頭植入惡意功能，試圖長期不被發現活動蹤跡，就算重裝作業系統或更換硬碟也能繼續存活。
 另外竄改某些韌體(BIOS或UEFI)的組態變數，已讓駭客停用某些硬體支援的安全控制，例如安全啟動(secure boot)
 }
+ch3-2.a{
+### Linux應對
+ASLRR 位址空間配置隨機 Address Space Layout Randomization 之前一般都是位在記憶體空間頂部 ASLR隱藏堆疊
+ASLR很快失效 駭客找到堆疊位址的方法
+推出ESP 可執行空間保護 Executeable Space Protection 會將推疊所在的記憶體為指標是為不可執行 就算破解ASLR找到植入代碼 ESP也會拒絕執行
+ESP 失效 Return Oriented Programming返回導向程式設計 不再將惡意軟體植入堆疊 而是尋找堆疊外可以協助完成任位的代碼片段
+ROP中 每個片段結尾的指令 都是返回到堆疊 每個片段的記憶體位只放在堆疊上 串接再一起執行惡意程式 
+片段跳轉到堆疊 堆疊跳轉到片段 控制程式流    
+
+SQL注入 相對容易預防 卻還是很常見
+}
 ch3-2.c{
     ### **5. Impacts: What Are the Consequences?**
 
