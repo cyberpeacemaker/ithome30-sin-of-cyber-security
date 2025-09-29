@@ -1,84 +1,271 @@
-太棒的章節草稿 — 主題清楚、範例實務且具說服力。下面我把可直接放進章節或附件（checklist / 範例 / 政策）的一組具體建議整理好：包括內容調整、技術/管理/人員層面的防護、實務範例、回應流程與衡量指標。你可以直接複製貼上或微調語氣融入原文。
-
-# 結構與內容強化（簡短）
-
-1. 在「什麼是社交工程」後加一段「為何重要？」（一段話說明：單點失誤可導致全面失控、財損與信任崩潰），強化讀者動機。
-2. 每種攻擊類型後加 1–2 個實際案例（匿名化、簡短）或常見誘餌句，讓讀者更有直覺判別能力。
-3. 在「原罪」段落後加一小節：「我們能做什麼？」把防護分類（技術 / 流程 / 人員）快速列出，作為章末總結。
-
-
-
-# 管理與流程（Policy / SOP）
-
-* 「付款/變更流程」規定：任何付款指示變更需第二個獨立通路（例如電話回撥至既有登記號碼）確認並保留記錄。
-* 來賓與訪客：實施門禁、臨時證、陪同政策（tailgating 應有明確舉報與處理）。
-* 存證與通報：明確的「疑似釣魚郵件上報」按鈕 + 24/7 SOC 分級回應流程。
-* 最低可接受安全設定（baseline）：每台機器的 OS/瀏覽器/Office 安全設定清單。
-
-
-# Deepfake / AI 特殊防護（短期可行方案）
-
-* 對財務高風險流程實施**多因素人工驗證**（例如視訊確認 + 主管簽名 + 授權碼）。
-* 對高風險語音/影片聯絡採「out-of-band」驗證：透過已知的電話號碼或面對面再次確認指示。
-* 在重要公開發表或內部影片增加水印、簽章或錄音/播出時間戳以便溯源。
-* 對外部重要決策採多方核准（至少兩位高階主管獨立確認）。
-
-# 偵測、通報與回應（IR）— 可放成附錄表格
-
-**發現後 6 步簡要 SOP**（可做成海報）
-
-1. 立即截圖/保留郵件完整標頭與附件（不要立即刪除）
-2. 若點擊惡意連結，隔離該裝置，通知 IT/SOC，暫停該帳號的遠端存取
-3. 變更受影響帳號密碼、強製 MFA 再驗證（若疑雲尚存則全域強制）
-4. 蒐集證據（郵件標頭、網路流量、系統日誌），建立事件記錄
-5. 若財務涉及，立刻通知銀行並啟動反詐程序；若個資外洩，依法規通報（列明報告人與時間）
-6. 事後通報、修正（更新防護規則、補強訓練）、和 KPT 會議（keep/problem/try）
-
-# 實例 & 檢查清單（可直接放入章節或印成口袋卡）
-
-**快速判別釣魚郵件的 8 個檢查點**（閱讀前 10–30 秒能檢查）
-
-1. 寄件人完整郵件地址（不是顯示名稱）是否與正常地址完全匹配？
-2. 郵件裡要求「立即」或「緊急」採取金錢/認證行為嗎？
-3. 連結預覽（滑鼠懸停）是否指向公司域名或可信域名？是否有短網址？
-4. 是否有非典型語氣或語言（語法錯誤、用詞不自然）？
-5. 是否包含不期望的附件（壓縮檔、.exe、.scr）？
-6. 是否要求提供密碼、OTP、MFA 程式碼？（正當服務不會要求）
-7. 是否有奇怪的 Reply‑To 或回覆路徑？（查看郵件標頭）
-8. 若涉及財務要求：是否有 SOP 要求「電話回撥」或「雙重核准」？
-
-# 衡量指標（KPI）— 報表化
-
-* 釣魚模擬點擊率（按部門分）
-* 釣魚回報率（收到可疑郵件後主動回報的人數/比例） ← 理想是回報率升高、點擊率下降
-* 平均偵測時間（time-to-detect）與處理時間（time-to-remediate）
-* 與財務詐欺相關的損失金額與事件數
-
-# 視覺呈現建議（便於教學與內部推廣）
-
-* 一頁海報：8 個檢查點 + 立即上報按鈕 QR code。
-* 流程圖：付款變更→雙通道驗證→留存紀錄→付款（圖示化）
-* 案例分析短片：模擬一次 vishing + deepfake 的攻擊流程與被破解的地方（1–2 分鐘）
-
-# 範例片段（可直接貼入章節）
-
-**示例：財務釣魚（Spear-phishing）**
-
-> 主旨：〔緊急〕供應商帳號變更 — 請於 2 小時內確認發票帳號
-> 內文（看似常態）：Hi 張小姐，請協助確認附檔的供應商帳號是否為最新，已有客戶催促付款。附件：Invoice_2025Q3.pdf
-> 危險點：急迫語氣、涉及付款、附件與請款資訊、假顯示寄件人（HR‑Payable）
-> 正確流程示範：不要直接依郵件變更付款帳號。使用既有合同聯絡方式回撥供應商或使用已登記的銀行轉帳信息核對。
-
-# 小結（可放章末）
-
-社交工程的危害在於它利用「人」，而非單純系統弱點。最有效的防線是「多層次防護」：結合**技術控制 + 嚴謹流程 + 重複性的、分層的教育**。把防護做成習慣與流程化（而非只靠個人警覺）才是真正可持續的解方。
+Great — let’s keep digging. I’ll cover **rootkits** (what they are, how they operate, types, detection, forensics, mitigation) and then cover **“botkit”** (two meanings — malicious bot toolkits vs. the legitimate Botkit chatbot framework), plus safe lab/demo ideas you can show in a talk. I’ll be explicit: I won’t provide code that helps build or hide malware, but I will give practical defensive, detection, and forensic guidance you can use in a lab or on hardened systems.
 
 ---
 
-如果你願意，我可以立刻幫你做下列其中一項（直接交付）：
+# Rootkits — deep dive
 
-1. 把上面的「快速判別釣魚郵件的 8 個檢查點」做成 A4 海報（中/英雙語）。
-2. 撰寫一個 5 條款的「付款變更 SOP 範本」，可直接給財務套用。
-3. 產出 3 個針對高階主管的「語音釣魚（vishing）示範對話」與對策腳本，供內部演練用。
+### What a rootkit is (short)
 
-選一個告訴我你要哪一項（或直接說要全部），我就馬上把完整文件貼給你。
+A **rootkit** is software (or firmware) designed to maintain privileged, stealthy access to a system by hiding its presence and actions. Rootkits focus on **persistence** and **stealth** (concealing files, processes, network connections, logs) so attackers can operate undetected.
+
+### High-level goals
+
+* Maintain persistent, privileged access (often kernel-level).
+* Hide artifacts (files, processes, registry keys, network sockets).
+* Intercept or tamper with system calls / telemetry to evade detection.
+* Provide a covert backdoor for additional tools (e.g., a bot payload).
+
+---
+
+## Types / placements (escalating stealth & difficulty)
+
+1. **User-mode rootkits**
+
+   * Replace or hook userland binaries/libraries (e.g., libc hooks, LD_PRELOAD on Linux).
+   * Easier to develop but easier to detect and remove.
+
+2. **Kernel-mode rootkits**
+
+   * Hook kernel APIs/syscalls (vtable or syscall table patching), kernel modules/drivers.
+   * Powerful and stealthy — can hide processes and sockets at the OS core.
+
+3. **Bootkits (MBR/UEFI)**
+
+   * Modify bootloader, MBR, or UEFI firmware to run before the OS — survives reinstalls in some cases.
+   * Extremely persistent and dangerous.
+
+4. **Hypervisor/root hypervisor (Blue Pill style)**
+
+   * Place a malicious hypervisor under the OS — intercepts all OS activity.
+   * Sophisticated and rare in the wild, mostly targeted attacks.
+
+5. **Firmware rootkits**
+
+   * Compromise device firmware (network cards, BIOS, UEFI) — extremely persistent and hard to detect.
+
+---
+
+## Common techniques used by rootkits
+
+* **System call table patching** (hooking to filter output).
+* **Kernel modules / driver hooking** to hide files/processes.
+* **Userland hook/library interposition** (replace functions that list processes or files).
+* **Direct kernel object manipulation (DKOM)** — edit kernel data structures (Windows) to remove process entries.
+* **Network stack manipulation** — hide sockets or modify packet handling.
+* **Log tampering** — intercept logging APIs to remove traces.
+* **Filesystem overlay / virtual FS** — present a clean view while malicious files remain hidden.
+
+---
+
+## How rootkits relate to beacon/C2/payload
+
+* A rootkit can be the **persistence and stealth layer** underneath a bot payload.
+* The bot (payload) performs actions and a small beacon can run under rootkit protection so network defenders never see it in standard system listings.
+* Rootkits amplify the difficulty of detection and remediation for any botnet-linked agent.
+
+---
+
+## Detection signals / indicators of compromise (IoCs)
+
+Rootkits are stealthy — detection often relies on **inconsistencies** and integrity checks rather than single signatures.
+
+### Host checks (Linux)
+
+* Mismatch between `/proc` and `ps` output: e.g., `ls -l /proc/<pid>` vs `ps aux`.
+* Unexpected kernel modules: compare `lsmod` / `/proc/modules` to known baseline.
+* Modified system binaries: changed checksums vs. known-good (use `debsums`, `rpm -V`, or package manager verification).
+* Unexpected network sockets not visible to `ss`/`netstat` but seen on interfaces.
+* Abnormal kernel memory artifacts or suspicious device nodes.
+* Presence of unknown kernel modules or unsigned drivers.
+
+### Host checks (Windows)
+
+* Processes not shown in Task Manager but visible in raw memory dumps.
+* Unexpected drivers (use `driverquery`, `sc query`).
+* Disabled or missing security tools, or services that crash/look corrupted.
+* System files signed by unexpected signers or tampered binaries.
+* Abnormal behavior on boot or unexpected UEFI/BIOS changes.
+
+### Behavioral & telemetry signals
+
+* Sudden disappearance of alerts/logs for some hosts.
+* Anti-virus/EDR process being terminated or disabled.
+* Persistent, unexplained network callbacks that survive reboots.
+* Increased privilege operations with no legitimate owner activity.
+
+---
+
+## Forensic approaches (safe, practical)
+
+* **Baseline & integrity checks**: file hashes (AIDE/Tripwire), package verification (`debsums`, `rpm -V`), signed-driver checks.
+* **Memory acquisition**: capture RAM (+ pagefile) and analyze for hidden processes, injected code, kernel patching. (Use trusted forensic tools and follow chain-of-custody.)
+* **Compare views**: enumerate processes via kernel interfaces and compare to userland APIs; differences indicate hiding.
+* **Offline analysis**: boot from a trusted rescue OS and inspect disk to avoid a live rootkit tampering with tools.
+* **UEFI/BIOS verification**: check firmware hashes and vendor tools to verify integrity.
+* **Collect network captures**: look for anomalous flows that persist across reboots.
+
+---
+
+## Detection tools & commands (non-malicious defensive use)
+
+**Linux**
+
+* `lsmod`; `cat /proc/modules`
+* `ps aux` vs `awk '{print $2}' /proc/*` comparisons
+* `ss -tunap` / `netstat -tupan`
+* `debsums -s` or `rpm -Va`
+* `rkhunter` and `chkrootkit` (good starting points, not definitive)
+* File integrity: `aide` or `tripwire`
+* Boot from live rescuer to inspect: `sha256sum` known binaries
+
+**Windows**
+
+* Sysinternals: `Autoruns`, `Process Explorer`, `Sigcheck`, `Process Monitor` (for behavior)
+* `driverquery /v`, `sc query`
+* EDR tools and memory acquisition (Magnet, Volatility for offline memory analysis)
+* `sfc /scannow` and `DISM` for system file corruption checks
+
+*(Note: Many rootkit detectors produce false positives — combine signals and use offline validation.)*
+
+---
+
+## Mitigation & removal guidance (high level)
+
+* **Have strong backups** and validate them regularly — often the cleanest remediation is full rebuild from known-good images.
+* **Isolate** suspected hosts from the network immediately to prevent lateral movement.
+* **Boot offline** (rescue media) for disk inspections and integrity checks, because a live rootkit may hide artifacts.
+* **Reflash firmware** (UEFI/BIOS) only when vendor-supplied checks and tools confirm compromise.
+* **Reinstall OS** from trusted media and rotate credentials (local and domain), because hidden credentials could have been captured.
+* **Harden**: enable secure boot, signed drivers only, disable unnecessary kernel module loading, limit physical access, enable firmware-level protections.
+
+---
+
+## Ethics & safety
+
+I will not provide code or step-by-step instructions that enable creation of rootkits, kernel hooks, or other hiding techniques. The guidance above is focused on detection, defense, and safe forensic practice.
+
+---
+
+# “Botkit” — two interpretations
+
+You probably mean **one of two things** — I’ll cover both so your talk is clear.
+
+### A) “Botkit” as a malicious bot toolkit (malware framework)
+
+* **Definition**: a set of ready-made components (dropper, payload modules, C2 stubs, obfuscation tools) attackers use to build bot binaries quickly — sometimes sold as “Botnet-as-a-Service”.
+* **Role & features**:
+
+  * Provides installers, loaders, module managers, and C2 clients.
+  * Often modular (plugins for DDoS, spam, crypto-mining, credential theft).
+  * May include DGA, fast-flux scripts, obfuscation/packer integration.
+  * Lowers attacker skill barrier and accelerates campaign scale.
+* **Defensive angle**:
+
+  * Look for common code templates or reused strings across samples (code reuse in multiple botnets).
+  * Hunting can focus on shared C2 patterns, unique beacons, or staging infrastructure.
+
+### B) Botkit (legitimate) — the Node.js chatbot framework
+
+* **Definition**: Botkit is an open-source toolkit for building chatbots and conversational apps (used with Slack, Microsoft Bot Framework, etc.).
+* **Why mention it**: name confusion can be useful to highlight to audiences — “Botkit” in a slide could mean a legitimate dev tool or malware toolkit depending on context. Clarify in your talk.
+
+---
+
+# How rootkits & botkits interact (narrative for your talk)
+
+* Rootkits provide stealth and persistence; botkits provide the command modules and operational functionality.
+* A sophisticated campaign might use a rootkit to hide a bot client that communicates via encrypted beacons to botkit C2.
+* Demonstrate with a diagram: initial compromise → dropper (bot) → persistence + stealth (rootkit hooks) → beacon → C2 → modules (botkit features).
+
+---
+
+# Safe demos / lab ideas to show conceptually (no malicious code)
+
+You can **demonstrate detection** and the concept of hiding without building a rootkit.
+
+1. **Baseline integrity demo**
+
+   * Show how `debsums`/`rpm -V` detects a changed binary.
+   * Modify a harmless test file (in a controlled VM) and show detection.
+
+2. **Process enumeration inconsistency (safe)**
+
+   * On a lab VM, run `ps aux` and `ls -l /proc/<pid>` to explain how rootkits could hide entries — **do not** create hiding code. Instead, simulate the idea by renaming a test script and showing differences in outputs.
+
+3. **Kernel module inspection**
+
+   * Load a **signed, harmless kernel module** that you control (only if you know what you’re doing). Better: *don’t load modules* — instead, show `lsmod` and `modinfo` on innocuous modules and explain how a malicious one would appear.
+
+4. **Memory analysis walkthrough (theory + screenshots)**
+
+   * Use a captured, sanitized memory image and analyze with Volatility to show hidden processes in a snapshot (only if you have a sanitized sample and legal rights to analyze it).
+
+5. **Network beacon capture (repeat from previous talk)**
+
+   * Run the safe beacon + C2 demo from earlier inside an isolated VM, then show PCAP with Wireshark and explain how a rootkit could hide the agent but *not* the network traffic (unless it also tampers with the network stack).
+
+---
+
+# Slide / talk outline (6–10 minute deep dive)
+
+1. Title + definition: rootkit vs botkit (1 min)
+2. Types of rootkits (user, kernel, boot, firmware) + visual (1 min)
+3. Techniques used to hide (hooking, DKOM, firmware) (1 min)
+4. How rootkits support botnets (diagram linking to beacon/C2) (1 min)
+5. Detection signals & forensic checklist (2 min)
+6. Demo idea: integrity checks + PCAP of a beacon (2–3 min)
+7. Mitigation & takeaways (1 min)
+
+---
+
+# Practical talking points / useful commands to show (defensive only)
+
+**Linux**
+
+* `lsmod` / `cat /proc/modules`
+* `ps aux` + `ls -l /proc/<pid>`
+* `ss -tunap` / `netstat -tupan`
+* `debsums -s` / `rpm -Va`
+* `sudo aide --check` (if AIDE is installed)
+* `sudo rkhunter --check` (explain limitations)
+
+**Windows**
+
+* `Autoruns` (Sysinternals) to inspect persistence
+* `Process Explorer` for loaded DLLs and handles
+* `driverquery /v` and `sigcheck` on drivers
+* Memory capture + `Volatility` offline analysis
+
+(When you demo, **stress that tools have false positives** and rootkit detection often requires offline validation.)
+
+---
+
+# MITRE ATT&CK mapping (high-level)
+
+Rootkit techniques cross several ATT&CK categories:
+
+* **Persistence** (T1547 — Boot or Logon Autostart Execution; others depending on mechanism)
+* **Defense Evasion** (various sub-techniques — hiding artifacts, tampering with logs)
+* **Privilege Escalation** (T1068 — Exploitation for Privilege Escalation, if rootkit gained kernel)
+* **Persistence via firmware** or **boot** techniques map to relevant sub-techniques.
+
+Botkits (malicious toolkits) map to **Initial Access**, **Command and Control**, **Execution**, **Credential Access**, and **Impact** depending on modules used.
+
+---
+
+# Final: Ethics, slide-ready soundbites, and what I won’t provide
+
+* **Ethics**: Always emphasize legal/ethical boundaries. Demos must be in isolated labs on systems you own or with explicit permission.
+* **Soundbites for audience**:
+
+  * “A rootkit hides the actor; a botkit provides the actor’s script.”
+  * “Detecting a rootkit is often a detective job — find inconsistent views, verify signatures, and go offline.”
+* **What I won’t do**: I won’t provide instructions, code, or templates for creating rootkits, kernel hooks, or C2 evasion techniques that would meaningfully facilitate creating malware.
+
+---
+
+If you want, I can:
+
+* Produce 6–8 slides (text + speaker notes) for this section.
+* Create a short demo script that *only* shows defensive commands and how to capture evidence (pcap capture filters, Volatility commands to list processes) — safe and educational.
+  Which of those would help you next?
