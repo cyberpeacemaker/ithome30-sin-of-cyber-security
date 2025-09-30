@@ -31,3 +31,6 @@
     - 1244/15 純BT傳訊
 - ch.3-2.b
     - gmail回信自己 偽冒身分?
+- ch.3-2.c
+    - real example || B292 New york times
+    - 

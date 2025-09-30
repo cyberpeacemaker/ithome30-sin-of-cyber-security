@@ -145,6 +145,32 @@ ch3-2.c{
     緩解
     CDN contents delivery network
     同一內容的快取分散在網路上
+    ### 網際網路服務提供商（ISP）
+
+**合法中間人？**
+
+在某些情境下，資料流量也可能經過所謂的「合法中間人」，這些角色在技術上具有類似 MITM 的能力，但其行為可能出於合法或受信任的目的。像是:
+
+- 網路管理員（如學校或公司）
+- 網際網路服務提供商（ISP）
+- VPN 業者
+
+ISP 能夠攔截未加密的流量、進行監控，甚至修改內容。
+
+### VPN 業者**
+
+VPN 服務商可能有能力存取使用者的加密資料或連線日誌，因此可視為一種**受信任的中間人**。他們可以在理論上解密並查看你的網路流量。
+
+### 網路管理員（如學校或公司）**
+
+網路管理員為了執行安全政策、流量管控等目的，可能會監控或分析使用者的資料流。他們在技術上也處於**通訊過程的中間位置**，因此有能力在使用者不知情的情況下進行監聽或資料操作。
+
+* Banking trojans (e.g., Zeus, SpyEye, Dyre)
+* Zeus (2007–2015): Intercepted bank logins, injected extra fields.
+* Dridex, Emotet: Delivered via email, hijacked browsers to steal financial info.
+* RedLine stealer, modern crypto wallet stealers: Grabbing session tokens.
+
+
 }
 ch3-4.b{
     ### 贏者全拿
