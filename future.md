@@ -56,3 +56,8 @@ As shown below, the attacker chooses to run a post-exploit persistence module, w
 * Downloader → T1105 (Ingress Tool Transfer)、T1218 (Signed Binary Proxy Execution)
 * Dropper/Installer → T1543 (Create or Modify System Process)、T1547 (Boot or Logon Autostart Execution)
 * Staged vs Stageless → T1105 (staged fetch)、T1059 (command and scripting interpreter) 等（可逐條對應）
+- ch.3-2.e
+    - 變種 AI 規則檔案，Rules File Backdoor將AI的「規則檔案」變成攻擊媒介，而有可能使得受到危害的軟體影響終端使用者
+    - Docker Hub[^6] Github[^7] [^9] NPM[^8] 輸入法[^10] VScode Extension[^12] Go模組[^15] 案例分類，介紹，重點擷取
+    - **保管重要資訊的人** 佛羅里達 警官 accurint 社會安全保險號碼 出生日期 居家住址 駕照號碼 || 網路供應商 T mobile 員工告訴一切 附加解說
+    
