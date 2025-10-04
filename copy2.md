@@ -1,20 +1,4 @@
-這段對 **OAuth** 和 **OpenID Connect (OIDC)** 的說明已經非常清楚、通俗易懂，尤其用「健身房門卡」的比喻非常生動，能幫助初學者快速掌握「授權 vs. 驗證」的差別。
-
-為了讓整體更專業一致、語句更精煉，我這裡提供一個**優化潤稿版本**，重點在於：
-
-* 統一用語與格式（避免過度口語但保留親切）
-* 增加 OAuth 中常見角色概念
-* 簡化重複說明，提升可讀性與邏輯流暢度
-
----
-
-### ✅ 優化後版本如下：
-
----
-
-## 🔐 OAuth 是什麼？
-
-
+Let’s break down **“Security Auditing”** and the **“Threat Modeling Process”**, both of which are essential components of cybersecurity and software/system security practices.
 
 ---
 
@@ -22,132 +6,52 @@
 
 ---
 
+## 🧠 **2. Threat Modeling Process**
 
+### ✅ **Definition:**
 
----
+**Threat modeling** is a proactive process of identifying, analyzing, and mitigating potential security threats or vulnerabilities in a system **before** they are exploited.
 
-### 🚪 OAuth 比喻場景：
+### 🎯 **Purpose:**
 
-你住飯店，想用健身房，櫃台不會查你是誰，只看你有沒有門卡。
-門卡上標示：「✅ 有健身房使用權限」 → 你就能進入。
+* Understand potential threats early in the design or development phase.
+* Prioritize security controls based on potential risks.
+* Minimize attack surface.
 
-> ✅ OAuth 就像這張「門卡」，讓應用程式在獲得使用者授權後，**以受限方式**存取資源。
+### 🔄 **Steps in the Threat Modeling Process:**
 
----
+#### 1. **Define the System**
 
-### 💡 OAuth 解決的問題
+* Understand and document what you're trying to protect (e.g., app architecture, data flow diagrams).
 
-例如：一個相簿應用程式想存取你 Google Drive 裡的照片：
+#### 2. **Identify Threats**
 
-1. 你點選「使用 Google 登入」
-2. Google 提示：「是否允許此應用程式存取你的照片？」
-3. 你同意 → Google 發出一個 **Access Token**
-4. 應用程式使用這個 Token 來存取照片資料（**只能**存取被授權的範圍）
+* Use models like **STRIDE** (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege).
+* Think like an attacker: how could this system be misused?
 
-✅ 你不需給密碼
-✅ 可隨時取消授權（從 Google 帳戶設定中移除）
+#### 3. **Analyze Risks**
 
----
-### 密碼外部問體
+* Assess the potential impact and likelihood of each threat.
+* Tools: **DREAD**, **CVSS**, or custom risk scoring.
 
-就算密碼本身。儲存密碼文件外洩，密碼管理工具外洩
-從系統中取得加密密碼清單，
-keyloggers, spyware
-* Phishing and credential theft
-* Man-in-the-middle (MITM) attacks
-memory dumped password
-也不需要破解了
+#### 4. **Define Mitigations**
 
-# 建議版本一（簡短、精準）
+* Propose countermeasures for each identified threat.
+* E.g., input validation, access controls, encryption, monitoring.
 
-### 密碼的外部風險
+#### 5. **Review & Revise**
 
-即使密碼本身夠複雜，也可能被外部因素攻破或洩露：例如儲存密碼的文件或密碼管理工具外洩、系統被盜取加密密碼清單、鍵盤記錄器與間諜軟體、釣魚與身分憑證竊取、中間人攻擊（MITM），或記憶體傾印（memory dump）取得密碼。這些情況下攻擊者常不需破解密碼即可直接取得帳號存取權。
+* Threat modeling is not a one-time activity—update it when systems change.
 
 ---
 
-# 建議版本二（技術導向）
+### 🔁 **How They Work Together:**
 
-### 密碼面臨的外部威脅（技術說明）
+* **Threat modeling** is **proactive** — used during **design** and development.
+* **Security auditing** is **reactive** — used after systems are deployed to **verify** security posture.
 
-外部威脅使得「破解密碼」不再是唯一途徑。主要風險包括：
-
-* **資料洩露**：密碼資料庫、備份或密碼管理器被公開或外洩，攻擊者可直接取得雜湊或明文。
-* **系統竊取**：攻擊者從伺服器或應用程式中匯出加密的密碼清單（即便是雜湊也有可能被離線破解或彩虹表攻擊）。
-* **惡意軟體**：keyloggers、spyware 或後門能在端點直接截取密碼或會話資料。
-* **社交工程 / 釣魚**：騙取使用者憑證或一次性驗證資料，使攻擊者免去技術破解。
-* **MITM（中間人攻擊）**：攔截未加密或弱加密的通訊，竊取登入令牌或密碼。
-* **記憶體傾印（memory dump）**：從運行中的系統或應用記憶體抓取明文或暫存的認證資料。
-
-結論：這些攻擊往往讓攻擊者無需「破解」密碼就能取得存取權，因此應同時強化端點、傳輸與認證流程的防護。
+Both are essential to maintaining robust security over the system lifecycle.
 
 ---
 
-# 建議版本三（給一般使用者，用語親切）
-
-### 為什麼光靠強密碼還不夠
-
-強密碼很重要，但很多時候問題不是密碼本身，而是「密碼被偷走」：
-
-* 有些公司或密碼管理器的資料庫會被駭，造成大量密碼外洩；
-* 電腦或手機中可能藏著鍵盤記錄器或間諜程式，直接把你鍵入的密碼傳給壞人；
-* 釣魚郵件會騙你把帳號密碼交出去；
-* 在不安全的網路上登入，資訊可能被中間人截取；
-* 有時程式會把密碼暫存在記憶體裡，駭客可以直接讀出來。
-
-所以除了選強密碼外，還要用兩步驗證、保持裝置與應用更新、避免可疑連結，並使用可信的密碼管理工具與加密連線。
-
----
-
-需要我把其中一個版本整合回你原先文件的格式（例如加入「Session 劫持」那段之後），或幫你改寫成投影片／報告用的簡短要點嗎？
-
----
-
-### 🕵️‍♂️ 身分竊盜：
-
-即使沒有密碼，也能冒用他人身分。
-
-### 🔥 什麼是 Session 劫持（Session Hijacking）？
-
-Session 劫持是指攻擊者竊取或猜出用戶的「工作階段識別碼」（通常是 Cookie），並利用它進入受害者的活躍帳號。由於伺服器信任這個識別碼，因此會把攻擊者當作合法用戶，不需再驗證身分。
-
----
-
-### ⚠️ Session 固定 vs Session 劫持（簡述）
-
-* **Session 固定（Fixation）**：攻擊者預先設定或控制一組 Session ID，等受害者登入後，再用這組 ID 偽裝身分。
-* **Session 劫持（Hijacking）**：攻擊者在受害者已登入後，偷走有效的 Session ID 使用。
-
----
-
-### 🔁 重播攻擊（Replay Attack）
-
-* **是什麼？** 攻擊者攔截有效的登入訊息（如驗證令牌），再重送一次來冒用用戶。
-* **為何重要？** 現代攻擊通常不針對密碼本身，而是針對登入過程中的驗證資訊（如被偷的 Token、攔截的登入請求或一次性密碼的重用）。
-
----
-
-簡言之，即使密碼安全，若 Session 或驗證過程被劫持，攻擊者依然能輕易冒名登入。這就是為什麼保護 Session 與傳輸安全（如 HTTPS）至關重要。
-
-下面是我幫你潤飾、重整後的版本，保留原意但語句更流暢、結構更清晰。你可以直接替換原稿或做小幅調整。
-
----
-## 原罪
-
-### 1. 密碼需求
-：記憶成本高、重設流程繁瑣，導致重複使用、簡化密碼或把密碼記錄在不安全處所的行為普遍存在。
-
-### 2. 破解成本
-不論密碼多複雜，隨著計算能力的提升與自動化破解工具的普及，破解某些類型密碼的時間成本正在下降。尤其在雲端計算與專用硬體（包括未來可能的量子計算）可被利用時，原本依賴時間成本維持的安全性不再穩固。因此單靠密碼的「複雜度」並不足以長期防禦高度動機的攻擊者。
-
-### 3. 密碼竊取
-密碼可能透過多種途徑被竊取：伺服器或第三方服務資料外洩、密碼管理工具配置或同步失誤、端點遭植入鍵盤記錄器或間諜軟體、中間人攻擊截取未加密通訊、或透過記憶體傾印直接取得明文憑證。這些情況使得單純依賴密碼強度的重要性被顯著削弱。
-
-### 4. 身分竊取
-任何基於靜態憑證的認證機制，一旦被攔截或冒用，便難以區分是否為真正使用者。攻擊手法包括會話劫持、重放攻擊、設備信任濫用等；因此，即使攻擊者不掌握密碼，也能在特定條件下冒充使用者，獲取未授權的存取權。
-
----
-
-### 小結（建議）
-鑑於以上問題，單靠密碼已不足以提供全面保護。建議採取多層防禦：強制多因素身份驗證（MFA）、推動無密碼/憑證型（passkey）方案、加強端點與通訊加密、縮短會話有效期並對異常風險行為做額外驗證，減少單一憑證被濫用時的影響範圍。
-
+Let me know if you want examples of either (e.g., a sample threat model or audit checklist).

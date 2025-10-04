@@ -1,9 +1,9 @@
 (another 偵測方式、實務檢查指令與回應流程)
 
-MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
+- MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
+- 本章節重點
+- 更多簡單比喻?
 
-- ch.0
-    - Title
 - ch.1 
     - cia+4
 - ch.1-1 
@@ -20,15 +20,12 @@ MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persiste
     - 點出台灣可以借鏡的地方
     - 網路犯罪集團不但擴大惡意軟體的影響範圍，也同步發展不同型態的威脅手法。例如烏俄戰爭出現一種名為「資料破壞」（Wiper）的攻擊手法，導致國家級駭客組織持續針對高科技製造業、公共部門、電信業等重要的基礎設施進行攻擊
     - Collin 航太 歐洲機場遭網路攻擊 數百航班取消或延誤
-
 - ch.2-0
     - 想在電力設施搞鬼？大陸製變流器驚見可疑通訊模組
     - 美警告：太陽能公路設施疑藏不明元件
 - ch.2-2
     - 國家apt事件改寫，敘事模式。中國進晶片合理，因為中國會這麼做，美國也會這麼做
     - 近期案件優化，改寫
-- ch.3-0
-    - title
 - ch.3-1
     - 作業系統無法控制在上運行的軟體對其造成破壞
 - ch.3-1.c
@@ -56,8 +53,15 @@ As shown below, the attacker chooses to run a post-exploit persistence module, w
 * Downloader → T1105 (Ingress Tool Transfer)、T1218 (Signed Binary Proxy Execution)
 * Dropper/Installer → T1543 (Create or Modify System Process)、T1547 (Boot or Logon Autostart Execution)
 * Staged vs Stageless → T1105 (staged fetch)、T1059 (command and scripting interpreter) 等（可逐條對應）
+
 - ch.3-2.e
     - 變種 AI 規則檔案，Rules File Backdoor將AI的「規則檔案」變成攻擊媒介，而有可能使得受到危害的軟體影響終端使用者
     - Docker Hub[^6] Github[^7] [^9] NPM[^8] 輸入法[^10] VScode Extension[^12] Go模組[^15] 案例分類，介紹，重點擷取
     - **保管重要資訊的人** 佛羅里達 警官 accurint 社會安全保險號碼 出生日期 居家住址 駕照號碼 || 網路供應商 T mobile 員工告訴一切 附加解說
+- ch.3-3.b
+    - 📌 歷史上著名的案例：
+
+DigiNotar（2011）被入侵：攻擊者簽發了上百張假的 Google、Yahoo 等憑證，造成伊朗等國家的用戶被監控。
+
+Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑證，Google 和 Mozilla 最終決定不再信任它簽發的憑證。
     

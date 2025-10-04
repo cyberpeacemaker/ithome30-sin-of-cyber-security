@@ -1,52 +1,54 @@
-A **supply-chain attack** is a type of cyberattack that targets less-secure elements in an organization's supply chain — such as third-party vendors, software providers, or service contractors — to gain access to the primary target.
+你提供的「原罪」段落內容已經很完整且清楚點出加密與憑證系統的根本問題，語氣也帶有批判與警示，挺適合這主題。不過，如果想讓語句更流暢、重點更突出，並且提升說服力，我可以給你一些調整建議，包含用詞精簡、結構調整與強化結尾語氣。
 
-### In simple terms:
-
-Instead of attacking a company directly, attackers infiltrate it by compromising trusted partners or software that the company uses.
+以下是我的修改建議範例，供你參考：
 
 ---
 
-### Key Concepts
+### 原罪
 
-| Term              | Meaning                                                                                                  |
-| ----------------- | -------------------------------------------------------------------------------------------------------- |
-| **Supply Chain**  | The network of external partners (software, hardware, services, etc.) that help an organization operate. |
-| **Attack Vector** | The weak point in a supplier or vendor the attacker exploits.                                            |
-| **Target**        | The ultimate organization or individual the attacker wants to harm or access.                            |
 
----
+是的，**建議補上「非對稱加密的基本流程」**，尤其是在介紹加密類型後，雖然你已經描述了其優缺點，但流程部分目前相較「數位簽章流程」來說略顯簡略。
 
-### How It Works (Example)
-
-1. **Company A** uses software from **Vendor B**.
-2. An attacker compromises **Vendor B’s** software (e.g. by injecting malicious code).
-3. When **Company A** installs or updates the software, they unknowingly install the malicious code.
-4. The attacker now has access to **Company A’s** systems.
+這樣補上能讓整體說明更完整，也方便讀者理解「非對稱加密」與「數位簽章」的異同，避免混淆。
 
 ---
 
-### Real-World Examples
+## ✅ 建議補充段落：非對稱加密的基本流程
 
-* **SolarWinds (2020)**: Attackers inserted malware into updates of the SolarWinds Orion software, affecting thousands of organizations, including U.S. government agencies.
-* **NotPetya (2017)**: Russian attackers compromised a Ukrainian accounting software update to spread malware globally.
-
----
-
-### Why It’s Dangerous
-
-* **Hard to Detect**: The attack comes from a trusted source.
-* **Widespread Impact**: One compromised vendor can affect many organizations.
-* **Trust Exploitation**: It undermines the chain of trust in software and services.
+你可以放在「非對稱加密」介紹後，補上這一小節：
 
 ---
 
-### Prevention Tips
 
-* Vet third-party vendors thoroughly.
-* Use **Software Bill of Materials (SBOM)** to know what's in your software.
-* Monitor software updates and network behavior.
-* Implement zero-trust security practices.
 
 ---
 
-Let me know if you'd like a visual or analogy to understand it better.
+### ✉️ 實際應用場景（舉例說明）
+
+* **加密電子郵件**：A 想寄一封信給 B，A 用 B 的公開金鑰加密內容，只有 B 能用私鑰解密。
+* **SSL/TLS 金鑰交換階段**：初次握手時，客戶端用伺服器的公開金鑰加密一個會話金鑰，伺服器用私鑰解密。
+
+---
+
+這樣補充能幫助讀者清楚地了解非對稱加密的實際用途和流程邏輯，與數位簽章做出區分。
+
+如果你希望，我也可以幫你整合進原文內容裡的「加密的類型」區段，格式一致化。要不要我幫你整理一下那一段？
+
+
+#### 執行面不合規與人為疏失
+
+再完美的理論與機制，最終還是需要人來落實執行。若人員未依標準操作或出現失誤，理論將淪為空談。近來中華電信因多項違規操作遭吊銷憑證即是明證。此外，PKI 與 TLS 等系統的部署繁雜，專業人力不足、環境多樣，導致問題頻傳。
+
+> 最終，這一切都掌握在人類手中。無論你多信任某個組織，都無法完全依賴它來保障安全。[^4]
+
+---
+
+### 主要修改重點
+
+* 段落標題更明確，讓讀者快速抓重點。
+* 精簡冗長語句，避免重複。
+* 強調「技術+人」的雙重限制，最後的結尾更有力。
+* 用詞更正式些，符合資安技術文風。
+* 保留你原本引用的精神與資訊。
+
+你覺得這樣的調整如何？要我幫你直接套用修改，或是依你的風格再調整語氣也沒問題！
