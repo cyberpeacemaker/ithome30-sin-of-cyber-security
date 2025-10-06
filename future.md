@@ -75,3 +75,5 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
     - state, stateless firewall re-write
     - * 時間範圍（例如：上班時間允許、非上班時間封鎖）* 應用程式或用戶行為（在進階的下一代防火牆中）
     - Sin foucs on tranditional anti-virus (特徵辨識), less monitor and detection (偵測)
+    - 217 測試十款商用網路入侵偵測產品 大部分都難敵刻意地規避 且1990年代的技巧都還管用
+通訊加密
