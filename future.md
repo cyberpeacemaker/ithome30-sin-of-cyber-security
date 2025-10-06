@@ -64,4 +64,7 @@ As shown below, the attacker chooses to run a post-exploit persistence module, w
 DigiNotar（2011）被入侵：攻擊者簽發了上百張假的 Google、Yahoo 等憑證，造成伊朗等國家的用戶被監控。
 
 Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑證，Google 和 Mozilla 最終決定不再信任它簽發的憑證。
-    
+- ch.3-3.c
+    - ### 防火牆邊界防禦 防火牆提供了邊界的防護，但是一旦放行，則完全不理會。
+    - state, stateless firewall re-write
+    - * 時間範圍（例如：上班時間允許、非上班時間封鎖）* 應用程式或用戶行為（在進階的下一代防火牆中）
