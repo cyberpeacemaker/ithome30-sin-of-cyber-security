@@ -1,8 +1,10 @@
 (another 偵測方式、實務檢查指令與回應流程)
 
-- MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
 - 本章節重點
-- 更多簡單比喻?
+- 圖表
+- MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
+- 若面向管理層，增加 KPI/度量（如MTTR、檢測率、合規與風險矩陣）會更有說服力。
+
 
 - ch.1 
     - cia+4
