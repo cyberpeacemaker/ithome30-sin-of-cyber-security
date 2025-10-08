@@ -34,6 +34,9 @@
 - ch.2-2
     - 國家apt事件改寫，敘事模式。中國進晶片合理，因為中國會這麼做，美國也會這麼做
     - 近期案件優化，改寫
+- ch.3
+    - 
+1. **Asymmetry of effort** — An attacker needs one vulnerability and one successful exploit path. Defenders must secure *everything* (patches, configs, users, supply chain).
 - ch.3-1
     - 作業系統無法控制在上運行的軟體對其造成破壞
 - ch.3-1.c
