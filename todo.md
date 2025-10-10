@@ -5,7 +5,9 @@
 - MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
 - 若面向管理層，增加 KPI/度量（如MTTR、檢測率、合規與風險矩陣）會更有說服力。
 
-
+- 資通安全的原罪 - The Sins of CyberSecurity
+- ch.0
+    - 動機補上 電信商等
 - ch.1 
     - cia+4
 - ch.1-1 
@@ -31,6 +33,7 @@
 - ch.2-0
     - 想在電力設施搞鬼？大陸製變流器驚見可疑通訊模組
     - 美警告：太陽能公路設施疑藏不明元件
+    - 及美國聯邦眾議院議長訪台時，導致超商與車站電子看板物聯網設備遭駭並置換內容等，
 - ch.2-2
     - 國家apt事件改寫，敘事模式。中國進晶片合理，因為中國會這麼做，美國也會這麼做
     - 近期案件優化，改寫
@@ -74,6 +77,8 @@ As shown below, the attacker chooses to run a post-exploit persistence module, w
     - 變種 AI 規則檔案，Rules File Backdoor將AI的「規則檔案」變成攻擊媒介，而有可能使得受到危害的軟體影響終端使用者
     - Docker Hub[^6] Github[^7] [^9] NPM[^8] 輸入法[^10] VScode Extension[^12] Go模組[^15] 案例分類，介紹，重點擷取
     - **保管重要資訊的人** 佛羅里達 警官 accurint 社會安全保險號碼 出生日期 居家住址 駕照號碼 || 網路供應商 T mobile 員工告訴一切 附加解說
+- ch.3-3.a
+    - 生物認證會失靈
 - ch.3-3.b
     - 📌 歷史上著名的案例：
 
@@ -87,6 +92,7 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
     - Sin foucs on tranditional anti-virus (特徵辨識), less monitor and detection (偵測)
     - 217 測試十款商用網路入侵偵測產品 大部分都難敵刻意地規避 且1990年代的技巧都還管用
 - ch.3-3.d
+    - Another significant limitation of IDPs is that they only find what they are programmed to detect.
     - 治標不治本
 通訊加密
 - ch.3-4.a
