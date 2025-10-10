@@ -45,6 +45,11 @@
     - [^6]: https://www.ithome.com.tw/news/169020
 - ch.3-2.b
     - gmail回信自己 偽冒身分?
+    - Exploit-Laden Banner Ads
+    - n some
+respects these ads look similar to pop ups, opening a new web browser in addition to the
+browser the user already opened. But these so-called “malvertisement” ads pop open without
+the underlying website authorizing any such thing; t
 - ch.3-2.c
     - real example || B292 New york times
     - 原罪編號
@@ -84,6 +89,8 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
 - ch.3-3.d
     - 治標不治本
 通訊加密
+- ch.3-4.a
+    - beauty - ch.4 - the underground econnomy
 - ch.3-4.b
     - 資安產品濫用
     - 沒有人/企業買得過國家
