@@ -102,3 +102,5 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
     - 沒有人/企業買得過國家
     - 社群
     - Google Mandiant || MS Security
+- ch.4-0
+    - 重寫 || FOCUS現在已有的
