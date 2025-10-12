@@ -363,6 +363,7 @@ Oauth概念延伸，不需要知道身分，核發功能的卡片
 有別於暗網，需要身分認證的網路
 建立於當前網路之上，不影響擁有匿名性的現有網路
 有安全性需求的裝置可以選擇只接受來自明網的流量
+Network protocal改寫 ID識別
 
 實名金融交易
 
@@ -412,4 +413,47 @@ IIST 結合後量子密碼學展前瞻資安方案亮相 打造半導體產業�
 3. Short-lived Certificates（短效期憑證）
 例如 Let's Encrypt 預設憑證有效期為 90 天。
 透過自動更新降低吊銷必要性：「不撤銷，讓它自動過期即可」。
+}
+
+{
+    ### ✅ Summary Table
+
+| Aspect            | CSIRT                                    | CERT                                  |
+| ----------------- | ---------------------------------------- | ------------------------------------- |
+| Meaning           | Computer Security Incident Response Team | Computer Emergency Response Team      |
+| Generic/Trademark | Generic term                             | Trademarked by CMU (SEI)              |
+| Origin            | Evolved naturally with cybersecurity     | Created after the 1988 Morris Worm    |
+| Usage             | Common in private orgs                   | Used with permission or in government |
+| Function          | Handles cyber incidents                  | Also handles cyber incidents          |
+
+---
+
+### 💡 In Practice:
+
+> Most **CERTs are CSIRTs**, but **not all CSIRTs are CERTs**.
+
+For example:
+
+* A bank may have an internal **CSIRT**, not called a CERT due to trademark restrictions.
+* A national government team might be called **CERT-X** (e.g., CERT-UK) with appropriate permission.    
+兩人規則 許可行動連結(permissive action link)
+重要安全決定 兩個獨立的個人合作進行 降單低一個人誤判形勢造成傷害的可能性
+
+工程師寧缺勿濫
+
+visual studio .net 邊憶起產品內建堆疊保護機制 有助於舒緩堆疊基礎的歡衝區溢位風險
+stack guard
+靜態驅動程式驗秤氣 static driver verification, sdv 驅動程式開發工具包　windows driver development kit
+開發windows上的裝置驅動程式 並以靜態驅動程式驗證氣來檢查漏洞
+公司將安全性納入開發的必要考量，如同開發測試，比起軟體開發後期亡羊補牢，越早發現促勿越早修補，能省下的成本就越多。安全性也該是這樣，減少安全弱點的數目，提升軟體品質，事後的補救就越少。
+
+### 🔚 小結：四大支柱角色
+
+| 名稱                | 關鍵角色                  | 使用對象            |
+| ----------------- | --------------------- | --------------- |
+| **MITRE**         | 漏洞與攻擊技術建模（CVE、ATT&CK） | 威脅情報、藍隊、紅隊      |
+| **OWASP**         | 應用程式安全實務與資源           | 開發、測試、AppSec 團隊 |
+| **NIST**          | 政府/企業資訊安全政策與框架        | 政策制定者、CISO、政府標案 |
+| **ISO/IEC 27001** | 國際資安治理與審核標準           | GRC 顧問、合規團隊     |
+
 }

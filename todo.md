@@ -34,6 +34,7 @@
     - 想在電力設施搞鬼？大陸製變流器驚見可疑通訊模組
     - 美警告：太陽能公路設施疑藏不明元件
     - 及美國聯邦眾議院議長訪台時，導致超商與車站電子看板物聯網設備遭駭並置換內容等，
+    - In December 2024, four Chinese industry associations representing the Internet, automotive, semiconductor, and telecommunications sectors declared that U.S.-made chips are no longer secure, urging domestic firms to adopt locally produced alternatives. Chinese automakers, already facing supply chain vulnerabilities and rising geopolitical tensions, have responded by designing their own AI chips and embracing a “de-Americanization” strategy.
 - ch.2-2
     - 國家apt事件改寫，敘事模式。中國進晶片合理，因為中國會這麼做，美國也會這麼做
     - 近期案件優化，改寫
@@ -104,3 +105,5 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
     - Google Mandiant || MS Security
 - ch.4-0
     - 重寫 || FOCUS現在已有的
+- ch.4-1
+    - IOT領域 IEC62443[^10]
