@@ -44,6 +44,8 @@ Log Injection
 1. **Asymmetry of effort** — An attacker needs one vulnerability and one successful exploit path. Defenders must secure *everything* (patches, configs, users, supply chain).
 - ch.3-1
     - 作業系統無法控制在上運行的軟體對其造成破壞
+- ch.3-1.a
+    - side-channel
 - ch.3-1.b
     - 為了保護這份信任不被惡意利用，DNSSEC 協定作為根伺服器重要的安全防護機制。DNSSEC 設計一個關鍵的主簽署金鑰(KSK)。這個金鑰是整個數位世界的信任基礎，一旦失控、洩露或遺失，將導致全球網路信任體系全面崩潰。如果有惡意行為者控制根伺服器，那麼他就幾乎控制了全球網路。
 - ch.3-1.c
@@ -117,6 +119,7 @@ Symantec CA 信任被撤銷（2017-2018）：因為它旗下子公司濫發憑�
    * 將產品／資安工程的關鍵績效指標（KPI）與實際的安全成果掛勾，而非僅追求功能開發速度。
    * 與供應商簽訂包含資安條款與服務水準協議（SLA）的合約，讓不安全的產品須承擔責任。
 - ch.4-3
+    - 中央資安團隊 數位鑑識
     - CISA GASA https://www.gasa.org/
     - {數位政府建設方面，林宜敬明言，數發部會持續推動數位憑證皮夾，相信數位憑證皮夾會是數位世界的基石，數位憑證皮夾的選擇性揭露功能，可保障民眾的隱私，未來數位憑證皮夾建立共同性，更可改善臺灣數位經濟的效益。「數發部最大的職責是創造適合AI、資安、資訊服務等產業成長茁壯的環境，讓資訊產業幫我解決問題的同時，可獲得豐厚利潤，也不會為社會帶來問題」}
     -{
