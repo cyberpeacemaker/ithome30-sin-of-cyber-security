@@ -5,6 +5,7 @@
 - MITRE ATT&CK 映射：把每種技術對應到 ATT&CK 技術 ID (例如 Persistence -> Registry Run Keys T1547.001, Scheduled Task T1053, Bootkits T1542.001 等)。
 - 若面向管理層，增加 KPI/度量（如MTTR、檢測率、合規與風險矩陣）會更有說服力。
 Log Injection
+- 資安學習資源認定服務，本院提供「資安學習資源認定服務」，就內容符合資安學習與教育目的之資安學習資源，經認定程序後發給認定標章，並授權得將標章印製於有關出版品、證書及印刷物。
 
 - 資通安全的原罪 - The Sins of CyberSecurity
 - ch.0
