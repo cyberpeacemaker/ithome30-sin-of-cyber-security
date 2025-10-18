@@ -1,4 +1,0 @@
-- https://www.illumio.com/blog/malware-payload-beacon
-- https://www.reddit.com/r/cybersecurity/comments/1ntbds3/question_are_computers_getting_safer/
-- https://www.virustotal.com/gui/sign-in/collection
-- Mediant || Google Threat Intelligence || M-Trends 2025 Report
